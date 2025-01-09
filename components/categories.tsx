@@ -24,7 +24,7 @@ const Categories: React.FC = () => {
       <div className="flex flex-wrap justify-between">
         {categories.map((category) => (
      
-            <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 min-h-[40vh]"><div className="border-2 h-full flex flex-col justify-between border-blue pt-4 rounded-2xl">
+            <div className="w-full  sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 min-h-[40vh]"><div className=" h-full flex flex-col justify-between border-blue pt-4 rounded-2xl border border-[var(--foreground)]">
             <div className="w-full flex justify-center items-center h-3/4 mb-4">
             <img
               src={category.image}
@@ -39,7 +39,7 @@ const Categories: React.FC = () => {
 
             </h3>
 
-              <button onClick={()=>{}} className="my-2 bg-white m-auto text-[var(--foreground)] py-1 px-4 rounded">
+              <button onClick={()=>{}} className=" bg-white mb-1 text-[var(--foreground)] py-1 px-4 rounded">
                 View Products
               </button>
           </div>

@@ -15,18 +15,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div
-      className=" w-full h-full border-2 m-auto
-     border-blue "
+      className=" h-[50vh] rounded-xl  border m-auto flex flex-col justify-between
+     border-[var(--foreground)] "
     >
-      <div className="w-full h-full">
-        <img
-          src={imageUrl}
+      <div className="h-4/5 flex justify-center items-center">
+               <img
+          src={"/image copy.png"}
           alt={title}
-          className="w-full h-3/5 border-b-2 border-blue"
-        />
-        <h3 className="text-center font-bold text-2xl my-4">{title}</h3>
-        <h3 className="text-center font-bold text-2xl my-4">{Id}</h3>
-        <p className="text-center text-xl">${price}</p>
+          />
+          </div> 
+        <div className="h-1/5 text-white bg-[var(--foreground)] rounded-b-xl flex flex-col justify-evenly items-center border-t-2 border-blue">   
+
+                <h3 className="text-center font-bold text-xl ">{title}</h3>
+        <h3 className="text-center font-bold text-xl ">Code : {Id}</h3>
+        <p className="text-center font-bold text-xl">price : {price}</p>
       </div>
     </div>
   );

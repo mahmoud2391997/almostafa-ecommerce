@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import ProductsList from "@/components/productslist";
 import Categories from "@/components/categories";
+import ContactInfo from "@/components/contact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,11 +35,10 @@ const categories = [
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col ">
-      <Navbar />
-      <section className="w-full h-[87vh] bg-gradient-to-b from-white to-[var(--foreground)] flex flex-col items-center justify-evenly text-white  rounded-b-full" style={{ backgroundColor: "var(--foreground)" }}>
+    <div className="w-full flex pt-[157.61px] flex-col relative">
+      <section className="w-full  bg-gradient-to-b from-[var(--foreground)] to-white flex flex-col items-center justify-evenly pb-[15%] text-white  rounded-b-full" style={{ backgroundColor: "var(--foreground)" , height: "calc(100vh - 157.61px)"}}>
        <div className="w-auto h-[10vh] flex flex-col items-center justify-center">
-        <h1 className="text-center text-[var(--foreground)] font-extrabold text-7xl">Overview</h1>
+        <h1 className="text-center text-white font-extrabold text-7xl">Overview</h1>
 <img src="/title.png" className="w-[300px]" />
        </div>
         <p className="text-center text-4xl font-bold w-2/5">
