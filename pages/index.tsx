@@ -1,35 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
 
 import Categories from "@/components/categories";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const categories = [
-  {
-    name: "Category1",
-    genres: [
-      { name: "Genre1", image: "/path/to/image1.jpg" },
-      { name: "Genre2", image: "/path/to/image2.jpg" },
-      { name: "Genre2", image: "/path/to/image2.jpg" },
-    ],
-  },
-  {
-    name: "Category2",
-    genres: [
-      { name: "Genre3", image: "/path/to/image3.jpg" },
-      { name: "Genre4", image: "/path/to/image4.jpg" },
-      { name: "Genre4", image: "/path/to/image4.jpg" },
-    ],
-  },
-];
 
 export default function Home() {
   return (
