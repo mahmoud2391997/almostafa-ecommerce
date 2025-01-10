@@ -13,7 +13,7 @@ export default function Home() {
         <p className="text-center md:text-2xl sm:text-xl text-lg lg:text-3xl xl:text-4xl font-bold w-2/4">
           At One Source, we are committed to revolutionizing the Food and
           Beverage industry by delivering cutting-edge solutions, innovative
-          products, and unmatched service. We strive to exceed our customers'
+          products, and unmatched service. We strive to exceed our customers&apos;
           expectations while promoting sustainability and quality in every
           aspect of our business.
         </p>
