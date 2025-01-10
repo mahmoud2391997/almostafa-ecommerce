@@ -20,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     >
       <div className="h-3/4 flex justify-center items-center p-1">
                <img
-          src={"/image copy.png"}
+          src={imageUrl}
           alt={title}
           className="object-contain"
           />

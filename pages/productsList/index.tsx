@@ -115,7 +115,7 @@ export default function DairyDerivatives() {
         Id={product.id}
         title={product.name}
         price={product.price}
-        imageUrl={product.image}
+        imageUrl={"/image copy.png"}
       />
     ))}
   </div>
