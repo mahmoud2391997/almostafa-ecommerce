@@ -9,16 +9,14 @@ function productslist() {
     image: string;
   }
   const dairyProducts = [
-    { id: 1, name: "Milk", price: 2.0, image: "milk.jpg" },
-    { id: 2, name: "Cheese", price: 5.0, image: "cheese.jpg" },
-    { id: 3, name: "Yogurt", price: 3.0, image: "yogurt.jpg" },
-    { id: 4, name: "Milk", price: 2.0, image: "milk.jpg" },
-    { id: 5, name: "Cheese", price: 5.0, image: "cheese.jpg" },
-    { id: 6, name: "Yogurt", price: 3.0, image: "yogurt.jpg" },
-    { id: 7, name: "Milk", price: 2.0, image: "milk.jpg" },
-    { id: 8, name: "Cheese", price: 5.0, image: "cheese.jpg" },
-    { id: 9, name: "Yogurt", price: 3.0, image: "yogurt.jpg" },
+    { id: 2, name: "Mozzarella", price: 5.0, image: "mozzarella.jpg" },
+
+    { id: 5, name: "Rumi", price: 5.0, image: "rumi.jpg" },
+    { id: 8, name: "Cheddar", price: 5.0, image: "cheddar.jpg" },
   ];
+  
+  console.log(dairyProducts);
+  
   return (
     <div className="w-full">
       <section className="w-full h-[85vh] flex flex-row-reverse">

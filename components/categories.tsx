@@ -4,18 +4,18 @@ import React from "react";
 const categories = [
   {
     id: 1,
-    name: "Cheese",
+    name: "Rumi",
     image:
       "https://www.bobbos.uk/cdn/shop/products/RoomiCheese_300x@2x.jpg?v=1617973600",
   },
-  { id: 2, name: "Butter", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9tV69g9FFoJXwGK7Gc_8WMP4dfYa72iRPg&s" },
+  { id: 2, name: "Bufflo Cheese", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9tV69g9FFoJXwGK7Gc_8WMP4dfYa72iRPg&s" },
   {
     id: 3,
-    name: "Cheese",
+    name: "Mozzarella",
     image:
       "https://www.bobbos.uk/cdn/shop/products/RoomiCheese_300x@2x.jpg?v=1617973600",
   },
-  { id: 4, name: "Butter", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9tV69g9FFoJXwGK7Gc_8WMP4dfYa72iRPg&s" },
+  { id: 4, name: "Chedder", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB9tV69g9FFoJXwGK7Gc_8WMP4dfYa72iRPg&s" },
 ];
 
 const Categories: React.FC = () => {
@@ -33,15 +33,16 @@ const Categories: React.FC = () => {
 
             </div>
 
-          <div className="w-full flex flex-col bg-[var(--foreground)] h-1/5 rounded-xl  justify-evenly items-center">
-            <h3 className="text-center  text-white h-10 my-auto pt-1   font-bold text-2xl">
+          <div className="w-full flex flex-col bg-transparent border-t border-[var(--foreground)] h-1/5 rounded-xl  justify-evenly items-center min-h-[78px]">
+            <h3 className="text-center  text-[var(--foreground)]  h-10 my-auto pt-1   font-bold text-2xl">
               {category.name}
 
             </h3>
-
-              <button onClick={()=>{}} className=" bg-white mb-1 text-[var(--foreground)] py-1 px-4 rounded">
+<Link href={`/productsList/?category=${category.name}`}>
+              <button onClick={()=>{}} className=" text-white mb-1 bg-[var(--foreground)] py-1 px-4 rounded">
                 View Products
               </button>
+</Link>
           </div>
            </div>
            </div>
