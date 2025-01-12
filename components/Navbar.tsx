@@ -40,9 +40,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <nav className="bg-gradient-to-b to-white from-[var(--foreground)] relative flex justify-around items-center p-4">
+      <nav className="bg-gradient-to-b to-white from-[var(--foreground)] relative flex justify-between items-center p-4">
         <div className="flex items-center">
-          <img src="/image.png" alt="Logo" className="w-28 sm:w-32 lg:w-40" />
+          <img src="/image.png" alt="Logo" className="w-28 ml-[5vw] sm:w-32 lg:w-40" />
         </div>
         <div className="flex justify-between items-center">
         <div className="md:hidden relative mt-1">

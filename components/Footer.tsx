@@ -5,10 +5,11 @@ const Footer = () => {
   return (
     <footer className=" text-[var(--foreground)] py-6 mt-10 bg-gradient-to-b from-white to-[var(--foreground)] ">
     <div className="container mx-auto text-center flex flex-col  justify-between">
-      <div className="flex justify-center items-center mb-4 ">
+      
+      <div className="flex flex-col sm:flex-row justify-center items-center mb-4 ">
         <img src="/image.png" alt="Almostafa Logo" className="h-14 mr-3" />
         <div>
-          <h1 className="text-lg sm:text-2xl font-bold">Almostafa For Dairy Products</h1>
+          <h1 className="text-md sm:text-xl font-bold">Almostafa For Dairy Products</h1>
           <p className="text-sm ">Since 1988</p>
         </div>
       </div>
