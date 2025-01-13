@@ -15,7 +15,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div
-      className="  sm:h-[40vh] rounded-xl  border m-auto flex flex-col justify-between
+      className="   rounded-xl  border m-auto flex flex-col justify-between
      border-[var(--foreground)] "
     >
       <div className="h-3/4 flex justify-center items-center p-1">
