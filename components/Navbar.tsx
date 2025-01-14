@@ -49,11 +49,11 @@ const Navbar = () => {
         </div>
       </div>
       <nav
-        className={`bg-gradient-to-b to-white from-[var(--foreground)] relative flex justify-evenly items-center p-4 ${
+        className={`bg-gradient-to-b to-white from-[var(--foreground)] relative flex justify-around items-center p-4 ${
           direction === "rtl" ? "flex-row-reverse" : "flex-row"
         }`}
       >
-        <div className="flex w-3/5 min-w-[170px] max-w-[200px] sm:w-1/3 md:w-1/6  items-center">
+        <div className="flex w-3/6  sm:w-1/3 md:w-1/6 min-w-[150px] max-w-[220px] items-center">
           <img
             src="/image.png"
             alt="Logo"
@@ -106,7 +106,7 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={` md:p-0 p-4 px-10 bg-white md:bg-transparent w-4/6 flex-col justify-start md:justify-evenly md:flex-row md:flex hidden ${
+          className={` md:p-0 p-4  px-10 bg-white md:bg-transparent w-3/6 flex-col justify-start md:justify-evenly md:flex-row md:flex hidden ${
             direction === "rtl"
               ? "flex-row-reverse text-right"
               : "flex-row text-left"
@@ -127,7 +127,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden  w-1/6  md:flex justify-center items-center">
 
       <LanguageDropdown />
         </div>

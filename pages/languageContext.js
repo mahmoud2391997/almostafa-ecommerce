@@ -6,7 +6,7 @@ const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
     
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('ar');
     const translations = language === 'en' ? enTranslations : arTranslations;
     const direction = language === 'ar' ? 'rtl' : 'ltr'; // Example logic
 
