@@ -83,9 +83,9 @@ const Navbar = () => {
               </svg>
             </button>
             <div
-              className={`w-[200px] right-0 top-12 absolute m-auto md:p-0 p-4 bg-white md:bg-transparent md:hidden md:w-3/4 flex-col justify-start ${
+              className={`w-[200px] top-12 absolute m-auto md:p-0 p-4 bg-white md:bg-transparent md:hidden md:w-3/4 flex-col justify-start ${
                 isOpen ? "block" : "hidden"
-              } ${direction === "rtl" ? "text-right" : "text-left"}`}
+              } ${direction === "rtl" ? "text-right left-0" : "text-left right-0 "}`}
             >
               <ul className="list-none md:flex md:justify-between md:items-center md:w-3/4 text-[var(--foreground)] font-bold text-base lg:text-lg xl:text-2xl">
                 <li className="mt-2 md:mt-0">

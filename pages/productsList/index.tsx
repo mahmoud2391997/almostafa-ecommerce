@@ -133,7 +133,7 @@ export default function DairyDerivatives() {
     </div>
     <section className="w-full min-h-10 bg-transparent h-auto rounded-lg py-3 border border-[var(--foreground)]">
       <h2 className={`text-[var(--foreground)]   mx-5 font-bold text-3xl  ${direction === "rtl" ? "text-right" : "text-left"}` }>{translations.categories}</h2>
-      <div className="flex flex-col text-[var(--foreground)] items-start ml-5 my-2">
+      <div className="flex flex-col text-[var(--foreground)] items-start mt-4 my-2 px-3">
         {categories.map((category) => (
           <div key={category} className={`mb-4 text-2xl w-full`}>
             <label className={`flex items-center justify-start ${direction === "rtl" ? "flex-row-reverse " :null }`}>
