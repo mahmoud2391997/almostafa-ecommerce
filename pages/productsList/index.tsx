@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useLanguage } from "../languageContext";
 
 export default function DairyDerivatives() {
   const router = useRouter();
   const { query } = router;
+    const { translations ,direction} = useLanguage(); // Ensure direction is provided by useLanguage
 
   const [searchItem, setSearchItem] = useState("");
   const [itemsPerPage, setItemsPerPage] = useState(6); // Default to 4 items per page
@@ -100,10 +102,10 @@ export default function DairyDerivatives() {
   const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 
   return (
-    <div className=" px-[1%] responsive-height xl:px-[2.5%]">
-<div className="w-auto h-[10vh] flex flex-col items-center justify-center my-3 md:my-6 mt-0 ">
+    <div className=" px-[1%] responsive-height  xl:px-[2.5%]">
+<div className="w-auto h-[15vh] flex flex-col items-center justify-center my-3 md:my-6 mt-0 ">
         <h1 className="text-center text-[var(--foreground)] font-extrabold text-4xl md:text-6xl mb-2">
-          Products List
+         {translations.productsList}
         </h1>
         <img src="/title.png" className="w-[360px]" />
       </div>
@@ -125,19 +127,19 @@ export default function DairyDerivatives() {
         value={searchItem}
         onChange={(e) => setSearchItem(e.target.value)}
         type="text"
-        placeholder="Search Dairy Derivatives..."
-        className="p-2 border border-[var(--foreground)] rounded-md flex-1"
+        placeholder={translations.search}
+        className={`p-2 border border-[var(--foreground)] ${direction === "rtl" ? "placeholder:text-right" : "placeholder:text-left"} rounded-md flex-1`}
       />
     </div>
     <section className="w-full min-h-10 bg-transparent h-auto rounded-lg py-3 border border-[var(--foreground)]">
-      <h2 className="text-[var(--foreground)] text-left ml-5 font-bold text-3xl">TYPES</h2>
+      <h2 className={`text-[var(--foreground)]   mx-5 font-bold text-3xl  ${direction === "rtl" ? "text-right" : "text-left"}` }>{translations.categories}</h2>
       <div className="flex flex-col text-[var(--foreground)] items-start ml-5 my-2">
         {categories.map((category) => (
-          <div key={category} className="mb-4 text-2xl">
-            <label className="flex items-center">
+          <div key={category} className={`mb-4 text-2xl w-full`}>
+            <label className={`flex items-center justify-start ${direction === "rtl" ? "flex-row-reverse " :null }`}>
               <input
                 type="checkbox"
-                className="mr-2"
+                className="mx-2"
                 checked={filteredCategory.includes(category)}
                 onChange={() => handleCheckboxChange(category)}
               />

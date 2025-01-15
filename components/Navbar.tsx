@@ -35,7 +35,7 @@ const Navbar = () => {
               <p className="ml-3 inline-block">{translations.phone}</p>
             </div>
             <div
-              className="flex justify-center items-center"
+              className={"flex justify-center items-center" + direction ? "flex-row-reverse" : "flex-row"}
               style={{ width: 200, height: 30 }}
             >
               <span className="inline-block w-[80px]">
