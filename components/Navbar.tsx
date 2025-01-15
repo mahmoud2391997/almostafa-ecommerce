@@ -35,13 +35,13 @@ const Navbar = () => {
               <p className="ml-3 inline-block">{translations.phone}</p>
             </div>
             <div
-              className={"flex justify-center items-center" + direction ? "flex-row-reverse" : "flex-row"}
+              className={`flex justify-center items-center + ${direction == "rtl" ? "flex-row-reverse" : "flex-row"}`}
               style={{ width: 200, height: 30 }}
             >
-              <span className="inline-block w-[80px]">
+              <span className="inline-block w-[80px] ml-1">
                 {translations.followUs}
               </span>
-              <span className="ml-1">
+              <span>
                 <a href="">{translations.facebook}</a>
               </span>
             </div>

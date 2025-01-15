@@ -1,3 +1,4 @@
+import { useLanguage } from "@/pages/languageContext";
 import React from "react";
 
 interface ProductCardProps {
@@ -13,6 +14,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
   Id,
 }) => {
+      const { translations ,direction } = useLanguage(); // Ensure direction is provided by useLanguage
+  
   return (
     <div
       className="   rounded-xl  border m-auto flex flex-col justify-between
@@ -29,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
                 <h3 className="text-center font-bold text-xl ">{title}</h3>
         <h3 className="text-center font-bold text-xl ">Code : {Id}</h3>
-        <p className="text-center font-bold text-xl">price : {price}</p>
+        <p className="text-center font-bold text-xl">{translations.price} : {price + (direction === "rtl" ? " جم" : " L.E")} </p>
       </div>
     </div>
   );

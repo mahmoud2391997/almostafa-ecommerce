@@ -1,3 +1,4 @@
+import { useLanguage } from "@/pages/languageContext";
 import Link from "next/link";
 import React from "react";
 
@@ -19,6 +20,8 @@ const categories = [
 ];
 
 const Categories: React.FC = () => {
+    const { translations } = useLanguage(); // Ensure direction is provided by useLanguage
+  
   return (
     <div className="categories p-6 w-full">
       <div className="flex flex-wrap justify-between">
@@ -40,7 +43,7 @@ const Categories: React.FC = () => {
             </h3>
 <Link href={`/productsList/?category=${category.name}`}>
               <button onClick={()=>{}} className=" text-white mb-1 bg-[var(--foreground)] py-1 px-4 rounded">
-                View Products
+                {translations.viewProducts}
               </button>
 </Link>
           </div>
