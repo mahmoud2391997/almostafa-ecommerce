@@ -3,7 +3,7 @@ import { useLanguage } from '../pages/languageContext';
 
 const LanguageDropdown: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { language, setLanguage, translations } = useLanguage();
+    const { language, setLanguage } = useLanguage();
 
     const toggleDropdown = () => {
         setIsOpen(!isOpen);

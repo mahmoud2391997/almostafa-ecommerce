@@ -4,7 +4,7 @@ import { useLanguage } from "./languageContext";
 
 
 export default function Home() {
-    const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
+    const { translations } = useLanguage(); // Ensure direction is provided by useLanguage
   
   return (
     <div className={`w-full flex  flex-col relative `}>
