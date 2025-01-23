@@ -14,25 +14,27 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageUrl,
   Id,
 }) => {
-      const { translations ,direction } = useLanguage(); // Ensure direction is provided by useLanguage
-  
+  const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
+
   return (
     <div
-      className="   rounded-xl  border m-auto flex flex-col justify-between
+      className="  w-full rounded-xl  border m-auto flex flex-col justify-between
      border-[var(--foreground)] "
     >
-      <div className="h-3/4 flex justify-center items-center p-1">
-               <img
+      <div className="h-3/4 w-full flex justify-center items-center p-1">
+        <img
           src={imageUrl}
           alt={title}
-          className="object-contain"
-          />
-          </div> 
-        <div className=" h-1/4 text-[var(--foreground)] bg-transparent   rounded-xl flex flex-col justify-evenly items-center border-t border-[var(--foreground)]">   
-
-                <h3 className="text-center font-bold text-xl ">{title}</h3>
+          className="object-contain  max-h-[300px] w-full"
+        />
+      </div>
+      <div className=" h-1/4 text-[var(--foreground)] bg-transparent   rounded-xl flex flex-col justify-evenly items-center border-t border-[var(--foreground)]">
+        <h3 className="text-center font-bold text-xl ">{title}</h3>
         <h3 className="text-center font-bold text-xl ">Code : {Id}</h3>
-        <p className="text-center font-bold text-xl">{translations.price} : {price + (direction === "rtl" ? " جم" : " L.E")} </p>
+        <p className="text-center font-bold text-xl">
+          {translations.price} :{" "}
+          {price + (direction === "rtl" ? " جم" : " L.E")}{" "}
+        </p>
       </div>
     </div>
   );
