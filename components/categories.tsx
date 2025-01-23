@@ -32,10 +32,10 @@ const Categories: React.FC = () => {
         {categories.map((category) => (
           <div
             key={category.name}
-            className="w-full relative sm:w-1/2 lg:w-1/3 xl:w-1/4  min-h-[40vh]"
+            className="w-full  sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 min-h-[40vh]"
           >
-            <div className=" h-3/4  absolute top-0 flex flex-col justify-between border-blue  rounded-2xl border border-[var(--foreground)] overflow-y-hidden">
-              <div className="w-full flex justify-center items-center h-full ">
+            <div className=" h-full flex flex-col justify-between border-blue rounded-2xl border border-[var(--foreground)] overflow-y-hidden">
+              <div className="flex justify-center items-center h-4/5 w-full border-b rounded-2xl border-[var(--foreground)]">
                 <img
                   src={category.image}
                   alt={category.name}
@@ -43,7 +43,7 @@ const Categories: React.FC = () => {
                 />
               </div>
 
-              <div className="w-full flex flex-col bg-transparent border-t border-[var(--foreground)] h-1/5 rounded-xl  justify-evenly items-center min-h-[78px]">
+              <div className="w-full flex flex-col bg-transparent  h-1/5 rounded-xl  justify-evenly items-center min-h-[78px]">
                 <h3 className="text-center  text-[var(--foreground)]  h-10 my-auto pt-1   font-bold text-2xl">
                   {category.name}
                 </h3>
