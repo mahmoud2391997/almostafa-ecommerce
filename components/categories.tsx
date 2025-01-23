@@ -5,15 +5,15 @@ import React from "react";
 const categories = [
   {
     id: 1,
-    name: "جبن ابيض و فيتا",
+    name: "جبن طبيعي",
     image:
       "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/175013B4-A2A0-48D6-8F88-4D76A58B5AD5_1_201_a.jpeg?alt=media&token=46863e57-87f7-4dcc-a84c-016bccb167c8",
   },
   {
     id: 2,
-    name: "جبن كريمي",
+    name: "جبن مستورد",
     image:
-      "https://scontent.fcai19-1.fna.fbcdn.net/v/t39.30808-6/469126323_122128603778477280_4571148668253336535_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=6HKkAq0KVIkQ7kNvgEqjEzN&_nc_oc=AdjoVLNCFnyHKDkMZ_XVK0QqidLVtwTYLU4aJyW3KYqrrj1PRJ7iZdCBCyu5AUPLLQk&_nc_zt=23&_nc_ht=scontent.fcai19-1.fna&_nc_gid=AHR5QX-QvB6Lzm1OOgigk01&oh=00_AYDcIpM-qi83eUmL8aEkbZB4zL1hE3PvejGN6PGQw7edAw&oe=6797CF90",
+      "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2013.57%20Background%20Removed.55.png?alt=media&token=487e9c82-7320-4fad-95e4-6895041555cf",
   },
   {
     id: 3,

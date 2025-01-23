@@ -15,16 +15,14 @@ export default function DairyDerivatives() {
   const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
 
   const [searchItem, setSearchItem] = useState("");
-  const [itemsPerPage, setItemsPerPage] = useState(6); // Default to 4 items per page
-  const [currentPage, setCurrentPage] = useState(1);
   const [filteredCategory, setFilteredCategory] = useState<string[]>([]);
 
-  const categories = ["مسلي طبيعي", "جبن كريمي", "جبن ابيض و فيتا"];
+  const categories = ["مسلي طبيعي", "جبن مستورد", "جبن طبيعي"];
   const dairyProducts = [
     {
       id: 2,
       name: "كريمي شيدر",
-      type: "جبن كريمي",
+      type: "جبن طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.15%20Background%20Removed.22.png?alt=media&token=8d330e2b-e3f7-40e4-bc59-ebc900325e8f",
@@ -32,24 +30,16 @@ export default function DairyDerivatives() {
     {
       id: 1,
       name: "كريمي رومي",
-      type: "جبن كريمي",
+      type: "جبن طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26%20Background%20Removed.51.png?alt=media&token=6699d89e-659e-4170-959b-fc299640c783",
     },
 
     {
-      id: 3,
-      name: "جبنة فيتا",
-      type: "جبن ابيض و فيتا",
-      price: 5.0,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26%20Background%20Removed.52.png?alt=media&token=b376df24-e872-4429-ba40-10e9d9194229",
-    },
-    {
       id: 9,
       name: "كريمي قشطة",
-      type: "جبن كريمي",
+      type: "جبن طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.51%20(1)%20Background%20Removed.png?alt=media&token=d7d4ecbd-d390-406b-bb55-92366ec80a59",
@@ -57,15 +47,31 @@ export default function DairyDerivatives() {
     {
       id: 4,
       name: "جبنة بالقشطة",
-      type: "جبن كريمي",
+      type: "جبن طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.51%20(2)%20Background%20Removed.png?alt=media&token=db855ccb-d67c-4788-80cc-58daaaaa18a5",
     },
     {
+      id: 22,
+      name: "جبنة شيدر مطبوخ",
+      type: "جبن طبيعي",
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/cheeder.png?alt=media&token=a8d2cf87-e18a-41d8-85e5-862b355ef5f2",
+    },
+    {
+      id: 3,
+      name: "جبنة فيتا",
+      type: "جبن طبيعي",
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26%20Background%20Removed.52.png?alt=media&token=b376df24-e872-4429-ba40-10e9d9194229",
+    },
+    {
       id: 20,
       name: "جبنة ملح خفيف",
-      type: "جبن ابيض و فيتا",
+      type: "جبن طبيعي",
 
       price: 5.0,
       image:
@@ -74,28 +80,48 @@ export default function DairyDerivatives() {
     {
       id: 29,
       name: "جبنة براميلي",
-      type: "جبن ابيض و فيتا",
+      type: "جبن طبيعي",
 
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.52%20(1)%20Background%20Removed.png?alt=media&token=09922861-ad4e-48e0-9fa7-0df23707bdc9",
     },
     {
-      id: 36,
-      name: "مسلي جاموسي بلدي نقي",
-      type: "مسلي طبيعي",
-      price: 5.0,
-      image:
-        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/052E7352-F676-4669-845F-1937582E3996_1_201_a.jpeg?alt=media&token=8b8ff391-d9d8-4bee-877f-96beeb90fb6e",
-    },
-    {
       id: 21,
       name: "جبنة براميلي فلفل",
-      type: "جبن ابيض و فيتا",
+      type: "جبن طبيعي",
 
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.52%20(2)%20Background%20Removed.png?alt=media&token=8e99e23a-2674-415c-badd-1a05250a99dc",
+    },
+    
+    {
+      id: 91,
+      name: "جبنة فلمنك هولندي",
+      type: "جبن مستورد",
+
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2013.57%20Background%20Removed.55.png?alt=media&token=487e9c82-7320-4fad-95e4-6895041555cf",
+    },
+    {
+      id: 61,
+      name: "جبن جودة هولندي",
+      type: "جبن مستورد",
+
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/falmang.png?alt=media&token=ed372c3d-e724-45c7-927c-dad4ef4b5e25",
+    },
+    {
+      id: 331,
+      name: "جبن شيدر ايرلندي",
+      type: "جبن مستورد",
+
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2014.05%20Background%20Removed.24.png?alt=media&token=1549a0c1-fa97-4874-8ee1-0d189767a807",
     },
     {
       id: 27,
@@ -105,29 +131,20 @@ export default function DairyDerivatives() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.59.31.jpeg?alt=media&token=d02765b1-26cb-4fc0-9c11-1445b71b29b5",
     },
+    {
+      id: 36,
+      name: "مسلي جاموسي بلدي نقي",
+      type: "مسلي طبيعي",
+      price: 5.0,
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/052E7352-F676-4669-845F-1937582E3996_1_201_a.jpeg?alt=media&token=8b8ff391-d9d8-4bee-877f-96beeb90fb6e",
+    },
   ];
-
-  useEffect(() => {
-    const updateItemsPerPage = () => {
-      const width = window.innerWidth;
-      if (width >= 1280) {
-        setItemsPerPage(8); // XL screens
-      } else if (width >= 640) {
-        setItemsPerPage(6); // LG screens
-      }
-    };
-
-    updateItemsPerPage();
-    window.addEventListener("resize", updateItemsPerPage);
-
-    return () => window.removeEventListener("resize", updateItemsPerPage);
-  }, []);
 
   const handleCheckboxChange = (type: string) => {
     setFilteredCategory((prev) =>
       prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
     );
-    setCurrentPage(1);
   };
 
   useEffect(() => {
@@ -148,28 +165,6 @@ export default function DairyDerivatives() {
       (filteredCategory.length === 0 || filteredCategory.includes(item.type))
   );
 
-  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-  const pageNumbersToShow = 3;
-  const startPage = Math.max(
-    1,
-    currentPage - Math.floor(pageNumbersToShow / 2)
-  );
-  const endPage = Math.min(totalPages, startPage + pageNumbersToShow - 1);
-  const pages = Array.from(
-    { length: endPage - startPage + 1 },
-    (_, index) => startPage + index
-  );
-
-  const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
-  const nextPage = () =>
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
-
   return (
     <div className=" px-[1%] responsive-height  xl:px-[2.5%]">
       <div className="w-auto h-[15vh] flex flex-col items-center justify-center my-3 md:my-6 mt-0 ">
@@ -180,7 +175,7 @@ export default function DairyDerivatives() {
       </div>
       <main className="w-full relative h-auto flex gap-7 flex-col-reverse md:flex-row">
         <div className="grid p-3 border rounded-lg border-[var(--foreground)] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:w-5/6 lg:w-3/4 md:w-2/3 h-auto w-full gap-[30px]">
-          {currentItems.map((product) => (
+          {filteredItems.map((product) => (
             <ProductCard
               key={product.id}
               Id={product.id}
@@ -234,46 +229,6 @@ export default function DairyDerivatives() {
               ))}
             </div>
           </section>
-          <div className="justify-center mt-6 mx-auto w-full lg:flex">
-            <ul className="flex space-x-3 items-center">
-              <li
-                onClick={prevPage}
-                className={`cursor-pointer text-white py-2 px-4 rounded-lg transition-colors 
-          ${
-            currentPage === 1
-              ? "bg-gray-600 cursor-not-allowed"
-              : "bg-[var(--foreground)] hover:bg-gray-700"
-          }`}
-              >
-                <FontAwesomeIcon icon={faChevronLeft} />
-              </li>
-              {pages.map((page) => (
-                <li
-                  key={page}
-                  onClick={() => paginate(page)}
-                  className={`cursor-pointer text-white py-2 px-4 rounded-lg transition-colors 
-          ${
-            currentPage === page
-              ? "bg-gray-600"
-              : "bg-[var(--foreground)] hover:bg-gray-700"
-          }`}
-                >
-                  {page}
-                </li>
-              ))}
-              <li
-                onClick={nextPage}
-                className={`cursor-pointer text-white py-2 px-4 rounded-lg transition-colors 
-          ${
-            currentPage === totalPages
-              ? "bg-gray-600 cursor-not-allowed"
-              : "bg-[var(--foreground)] hover:bg-gray-700"
-          }`}
-              >
-                <FontAwesomeIcon icon={faChevronRight} />
-              </li>
-            </ul>
-          </div>
         </div>
       </main>
     </div>
