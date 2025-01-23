@@ -35,14 +35,18 @@ const Navbar = () => {
               <p className="ml-3 inline-block">{translations.phone}</p>
             </div>
             <div
-              className={`flex justify-center items-center + ${direction == "rtl" ? "flex-row-reverse" : "flex-row"}`}
+              className={`flex justify-center items-center + ${
+                direction == "rtl" ? "flex-row-reverse" : "flex-row"
+              }`}
               style={{ width: 200, height: 30 }}
             >
               <span className="inline-block w-[80px] ml-1">
                 {translations.followUs}
               </span>
               <span>
-                <a href="">{translations.facebook}</a>
+                <a href="https://www.facebook.com/Mustafa.cheese">
+                  {translations.facebook}
+                </a>
               </span>
             </div>
           </div>
@@ -54,10 +58,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex w-3/6  sm:w-1/3 md:w-1/6 min-w-[150px] max-w-[220px] items-center">
-          <img
-            src="/image.png"
-            alt="Logo"
-          />
+          <img src="/image.png" alt="Logo" />
         </div>
         <div className="flex justify-between items-center">
           <div className="md:hidden relative mt-1">
@@ -85,7 +86,9 @@ const Navbar = () => {
             <div
               className={`w-[200px] top-12 absolute m-auto md:p-0 p-4 bg-white md:bg-transparent md:hidden md:w-3/4 flex-col justify-start ${
                 isOpen ? "block" : "hidden"
-              } ${direction === "rtl" ? "text-right left-0" : "text-left right-0 "}`}
+              } ${
+                direction === "rtl" ? "text-right left-0" : "text-left right-0 "
+              }`}
             >
               <ul className="list-none md:flex md:justify-between md:items-center md:w-3/4 text-[var(--foreground)] font-bold text-base lg:text-lg xl:text-2xl">
                 <li className="mt-2 md:mt-0">
@@ -112,7 +115,11 @@ const Navbar = () => {
               : "flex-row text-left"
           }`}
         >
-          <ul className={`list-none  md:justify-between w-full md:items-center   text-[var(--foreground)] md:text-white font-bold text-base lg:text-lg xl:text-2xl  ${direction === "rtl" ? "flex flex-row-reverse" : "flex flex-row"}`}>
+          <ul
+            className={`list-none  md:justify-between w-full md:items-center   text-[var(--foreground)] md:text-white font-bold text-base lg:text-lg xl:text-2xl  ${
+              direction === "rtl" ? "flex flex-row-reverse" : "flex flex-row"
+            }`}
+          >
             <li className="mt-2 md:mt-0">
               <Link href="/">{translations.home}</Link>
             </li>
@@ -128,8 +135,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="hidden  w-1/6  md:flex justify-center items-center">
-
-      <LanguageDropdown />
+          <LanguageDropdown />
         </div>
       </nav>
     </div>
