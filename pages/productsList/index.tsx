@@ -19,20 +19,20 @@ export default function DairyDerivatives() {
   const [currentPage, setCurrentPage] = useState(1);
   const [filteredCategory, setFilteredCategory] = useState<string[]>([]);
 
-  const categories = ["Cheddar", "Mozzarella", "Rumi", "Bufflo Cheese"];
+  const categories = ["مسلي طبيعي", "جبن كريمي", "جبن ابيض و فيتا"];
   const dairyProducts = [
     {
       id: 2,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "كريمي شيدر",
+      type: "جبن كريمي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.15%20Background%20Removed.22.png?alt=media&token=8d330e2b-e3f7-40e4-bc59-ebc900325e8f",
     },
     {
       id: 1,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "كريمي رومي",
+      type: "جبن كريمي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26%20Background%20Removed.51.png?alt=media&token=6699d89e-659e-4170-959b-fc299640c783",
@@ -40,23 +40,23 @@ export default function DairyDerivatives() {
 
     {
       id: 3,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "جبنة فيتا",
+      type: "جبن ابيض و فيتا",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26%20Background%20Removed.52.png?alt=media&token=b376df24-e872-4429-ba40-10e9d9194229",
     },
     {
       id: 9,
-      name: "Cheese",
-      type: "Cheddar",
+      name: "كريمي قشطة",
+      type: "جبن كريمي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.51%20(1)%20Background%20Removed.png?alt=media&token=d7d4ecbd-d390-406b-bb55-92366ec80a59",
     },
     {
       id: 4,
-      name: "Cheese",
+      name: "جبنة بالقشطة",
       type: "Mozzarella",
       price: 5.0,
       image:
@@ -64,40 +64,43 @@ export default function DairyDerivatives() {
     },
     {
       id: 20,
-      name: "Cheese",
-      type: "Cheddar",
+      name: "جبنة ملح خفيف",
+      type: "جبن ابيض و فيتا",
+
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.51%20(3)%20Background%20Removed.png?alt=media&token=7a92616a-9612-44b1-8b2a-15993ff62ea7",
     },
     {
       id: 29,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "جبنة براميلي",
+      type: "جبن ابيض و فيتا",
+
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.52%20(1)%20Background%20Removed.png?alt=media&token=09922861-ad4e-48e0-9fa7-0df23707bdc9",
     },
     {
       id: 36,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "مسلي جاموسي بلدي نقي",
+      type: "مسلي طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/052E7352-F676-4669-845F-1937582E3996_1_201_a.jpeg?alt=media&token=8b8ff391-d9d8-4bee-877f-96beeb90fb6e",
     },
     {
       id: 21,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "جبنة براميلي فلفل",
+      type: "جبن ابيض و فيتا",
+
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.52%20(2)%20Background%20Removed.png?alt=media&token=8e99e23a-2674-415c-badd-1a05250a99dc",
     },
     {
       id: 27,
-      name: "Cheese",
-      type: "Mozzarella",
+      name: "مسلي بقري بلدي نقي",
+      type: "مسلي طبيعي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.59.31.jpeg?alt=media&token=d02765b1-26cb-4fc0-9c11-1445b71b29b5",
