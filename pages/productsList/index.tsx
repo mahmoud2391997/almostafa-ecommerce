@@ -2,11 +2,7 @@
 import ProductCard from "@/components/productCard";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+
 import { useLanguage } from "../languageContext";
 
 export default function DairyDerivatives() {
@@ -95,7 +91,7 @@ export default function DairyDerivatives() {
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.52%20(2)%20Background%20Removed.png?alt=media&token=8e99e23a-2674-415c-badd-1a05250a99dc",
     },
-    
+
     {
       id: 91,
       name: "جبنة فلمنك هولندي",
