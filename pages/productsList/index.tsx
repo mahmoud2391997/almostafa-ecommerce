@@ -57,7 +57,7 @@ export default function DairyDerivatives() {
     {
       id: 4,
       name: "جبنة بالقشطة",
-      type: "Mozzarella",
+      type: "جبن كريمي",
       price: 5.0,
       image:
         "https://firebasestorage.googleapis.com/v0/b/canteen-e3751.appspot.com/o/WhatsApp%20Image%202025-01-23%20at%2001.26.51%20(2)%20Background%20Removed.png?alt=media&token=db855ccb-d67c-4788-80cc-58daaaaa18a5",
