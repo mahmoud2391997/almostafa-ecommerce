@@ -7,7 +7,7 @@ import  LanguageProvider  from "./languageContext";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <LanguageProvider>
-      <div className="w-full flex lg:pt-[159.61px] sm:pt-[180.09px] pt-[220.82px] flex-col relative">
+      <div className="w-full flex  flex-col ">
         <Navbar />
 
         <Component {...pageProps} />

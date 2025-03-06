@@ -2,12 +2,115 @@
 import Categories from "@/components/categories";
 import { useLanguage } from "./languageContext";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { useState } from "react";
+import { useRouter } from 'next/router';
+
+const adImages = [
+  "/swiper2.jpg",
+  "/swiper3.jpg",
+  "/swiper4.jpg",
+  "/swiper5.jpg",
+  "/swiper6.jpg",
+  "/swiper7.jpg",
+  "/swiper8.jpg",
+  "/swiper9.jpg",
+];
 export default function Home() {
     const { translations } = useLanguage(); // Ensure direction is provided by useLanguage
-  
+    const [activeIndex, setActiveIndex] = useState(0);
+    const router = useRouter();
+function navigateToProducts() {
+  router.push('/productsList');
+}
   return (
-    <div className={`w-full flex  flex-col relative `}>
+    <div className={`w-full flex  flex-col`}>
+         <div className=" h-auto   md:hidden bg-white w-full text-center flex flex-col gap-2 items-center justify-center z-10 text-[var(--foreground)]  ">
+    <h1 className="text-lg sm:text-2xl md:text-4xl xl:text-5xl font-extrabold">
+      مرحبا بك في متجر المصطفي الاكتروني لمنتجات الالبان
+    </h1>
+    <div className="flex  flex-col justify-between my-2 gap-5 items-center">
+
+    <h1 className="text-lg sm:text-2xl md:text-4xl  font-extrabold">
+      نقدم لك افضل منتجات الالبان الطازجة والمعقمة
+    </h1>
+    <button className="bg-[var(--foreground)]  w-[150px]  md:w-[300px] text-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
+      عرض المنتجات
+    </button>
+    </div>
+    
+      </div>
+      <div className="   flex flex-row-reverse overflow-hidden  w-full   h-[80vh] relative" > 
+      
+      <div className=" h-auto rounded-lg  absolute left-5 top-4 text-right w-[50%] xl:w-[50%] md:flex hidden flex-col gap-2 items-end justify-start z-10  ">
+    <h1 className="text-lg sm:text-2xl md:text-2xl lg:text-4xl font-extrabold">
+      مرحبا بك في متجر المصطفي الاكتروني لمنتجات الالبان
+    </h1>
+    <div className="flex  flex-col justify-start my-2 gap-5 items-end">
+
+    <h1 className="text-lg sm:text-xl lg:text-3xl  font-extrabold">
+      نقدم لك افضل منتجات الالبان الطازجة والمعقمة
+    </h1>
+    <button className="bg-[var(--foreground)]  w-[300px] text-white font-bold py-3 px-6 rounded-lg text-2xl " onClick={navigateToProducts}>
+      عرض المنتجات
+    </button>
+    </div>
+    
+      </div>
+   
+      <img  src="/mainbg.png"  className="w-[98%] h-full"/>  
+      </div>
+      <section className="w-full px-4 sm:px-10 md:px-16 lg:px-20 py-10">
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        pagination={{
+          clickable: true,
+          
+          renderBullet: (index, className) => {
+            const isActive = index === activeIndex;
+            return `<span class="${className} w-6 h-1  ${
+              isActive ? "bg-blue-500 w-10" : "bg-gray-500"
+            } rounded-md mx-1 inline-block"></span>`;
+          },
+        }}
+        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
+        className="w-full relative rounded-lg"
+        loop={true}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+      >
+        {adImages.map((src, index) => (
+          <SwiperSlide
+            key={index}
+            className="flex flex-col items-center h-full justify-between transition-all duration-500 mb-10"
+          >
+            <img
+              src={src}
+              alt={`Ad ${index + 1}`}
+              className="w-full object-cover rounded-lg"
+            />
+            <div className="w-full flex justify-center mt-4">
+              <button onClick={navigateToProducts} className="w-[80%] max-w-[200px] h-[60px] text-white border border-[var(--foreground)] bg-[var(--foreground)] font-bold py-2 px-4 rounded-lg text-xl sm:text-2xl">
+                عرض المنتجات
+              </button>
+            </div>
+          </SwiperSlide>
+        ))}
+        {/* Custom Pagination Positioning */}
+        <div className="swiper-pagination !absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center"></div>
+      </Swiper>
+    </section>
       <section className="w-full border border-[#562b2c] border-t-0 bg-white flex flex-col items-center justify-evenly h-[81.8vh] pb-[10%] text-[var(--foreground)] responsive-height rounded-b-full">
        <div className="w-auto flex flex-col items-center justify-center">
         <h1 className="text-center  font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">{translations.overview}</h1>
@@ -16,6 +119,9 @@ export default function Home() {
         <p className="text-center md:text-2xl sm:text-xl text-md lg:text-3xl xl:text-4xl font-bold w-2/4">
           {translations.overviewContent}
         </p>
+        <button onClick={navigateToProducts} className="mt-6 text-white w-[200px] lg:w-[300px] bg-[var(--foreground)] font-bold py-3 px-6 rounded-lg text-2xl transition-all">
+      عرض المنتجات
+    </button>
       </section>
       <section className="w-full">
 

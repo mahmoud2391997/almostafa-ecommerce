@@ -4,13 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faMobile } from "@fortawesome/free-solid-svg-icons";
 import LanguageDropdown from "./language";
 import { useLanguage } from "../pages/languageContext";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
-
+  const router = useRouter();
+function navigateToLanding() {
+  router.push('/');
+}
   return (
-    <div className="fixed top-0 w-full z-50">
+    <div className=" w-full z-50">
       <div className="w-full h-auto sm:h-[45px] flex justify-center items-center text-white bg-[var(--foreground)] relative">
         <div className="sm:w-full flex justify-center items-center m-0">
           <div
@@ -57,7 +61,7 @@ const Navbar = () => {
           direction === "rtl" ? "flex-row-reverse" : "flex-row"
         }`}
       >
-        <div className="flex w-3/6  sm:w-1/3 md:w-1/6 min-w-[150px] max-w-[220px] items-center">
+        <div className="flex w-3/6  sm:w-1/3 md:w-1/6 min-w-[150px] max-w-[220px] items-center cursor-pointer" onClick={navigateToLanding}>
           <img src="/image.png" alt="Logo" />
         </div>
         <div className="flex justify-between items-center">
