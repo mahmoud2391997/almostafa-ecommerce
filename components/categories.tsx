@@ -1,6 +1,7 @@
 import { useLanguage } from "@/pages/languageContext";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { use } from "react";
 
 const categories = [
   {
@@ -25,14 +26,18 @@ const categories = [
 
 const Categories: React.FC = () => {
   const { translations } = useLanguage(); // Ensure direction is provided by useLanguage
-
+  const router = useRouter();
+function navigateToProducts(category : string) { 
+  router.push(`/productsList/?category=${category}`);
+}
   return (
     <div className="categories p-6 w-full">
       <div className="flex flex-wrap justify-between">
         {categories.map((category) => (
           <div
             key={category.name}
-            className="w-full  sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 min-h-[40vh]"
+            className="w-full  sm:w-1/2 lg:w-1/3 xl:w-1/4 p-4 min-h-[40vh] cursor-pointer"
+            onClick={() => navigateToProducts(category.name)}
           >
             <div className=" h-full flex flex-col justify-between border-blue rounded-2xl border border-[var(--foreground)] overflow-y-hidden">
               <div className="flex justify-center items-center h-4/5 w-full border-b rounded-2xl border-[var(--foreground)]">
@@ -47,14 +52,11 @@ const Categories: React.FC = () => {
                 <h3 className="text-center  text-[var(--foreground)]  h-10 my-auto pt-1   font-bold text-2xl">
                   {category.name}
                 </h3>
-                <Link href={`/productsList/?category=${category.name}`}>
                   <button
-                    onClick={() => {}}
                     className=" text-white mb-1 bg-[var(--foreground)] py-1 px-4 rounded"
                   >
                     {translations.viewProducts}
                   </button>
-                </Link>
               </div>
             </div>
           </div>
