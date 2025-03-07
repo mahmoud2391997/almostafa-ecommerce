@@ -15,7 +15,7 @@ function navigateToLanding() {
 }
   return (
     <div className=" w-full z-50">
-      <div className="w-full h-auto sm:h-[45px] flex justify-center items-center text-white bg-[var(--foreground)] relative">
+      <div className="w-full h-auto sm:h-[45px] flex justify-center items-center bg-white text-[var(--foreground)] relative">
         <div className="sm:w-full flex justify-center items-center m-0">
           <div
             className={`flex justify-around items-center w-full flex-col sm:flex-row h-auto ${
@@ -57,7 +57,7 @@ function navigateToLanding() {
         </div>
       </div>
       <nav
-        className={`bg-gradient-to-b to-white from-[var(--foreground)] relative flex justify-around items-center p-4 ${
+        className={`bg-white  relative flex justify-around items-center p-4 ${
           direction === "rtl" ? "flex-row-reverse" : "flex-row"
         }`}
       >
@@ -120,7 +120,7 @@ function navigateToLanding() {
           }`}
         >
           <ul
-            className={`list-none  md:justify-between w-full md:items-center   text-[var(--foreground)] md:text-white font-bold text-base lg:text-lg xl:text-2xl  ${
+            className={`list-none  md:justify-between w-full md:items-center   text-[var(--foreground)]  font-bold text-base lg:text-lg xl:text-2xl  ${
               direction === "rtl" ? "flex flex-row-reverse" : "flex flex-row"
             }`}
           >

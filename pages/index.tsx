@@ -30,41 +30,24 @@ function navigateToProducts() {
 }
   return (
     <div className={`w-full flex  flex-col`}>
-         <div className=" h-auto   md:hidden bg-white w-full text-center flex flex-col gap-2 items-center justify-center z-10 text-[var(--foreground)]  ">
-    <h1 className="text-lg sm:text-2xl md:text-4xl xl:text-5xl font-extrabold">
+<div className="w-full h-[30vh] flex  bg-gradient-to-b from-white to-[var(--foreground)] z-0 rounded-b-full">
+
+         <div className="  rounded-b-lg bg-transparent m-auto  h-full p-5 text-center flex flex-col gap-2 items-center justify-around z-10 text-[var(--foreground)] ">
+          
+    <h1 className="text-lg sm:text-2xl md:text-6xl xl:text-7xl font-extrabold">
       مرحبا بك في متجر المصطفي الاكتروني لمنتجات الالبان
     </h1>
-    <div className="flex  flex-col justify-between my-2 gap-5 items-center">
 
-    <h1 className="text-lg sm:text-2xl md:text-4xl  font-extrabold">
-      نقدم لك افضل منتجات الالبان الطازجة والمعقمة
-    </h1>
-    <button onClick={navigateToProducts} className="bg-[var(--foreground)]  w-[150px]  md:w-[300px] text-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
-      عرض المنتجات
-    </button>
-    </div>
-    
-      </div>
-      <div className="   flex flex-row-reverse overflow-hidden  w-full   h-[80vh] relative" > 
-      
-      <div className=" h-auto rounded-lg  absolute left-5 top-4 text-right w-[50%] xl:w-[50%] md:flex hidden flex-col gap-2 items-end justify-start z-10  ">
-    <h1 className="text-lg sm:text-2xl md:text-2xl lg:text-4xl font-extrabold">
-      مرحبا بك في متجر المصطفي الاكتروني لمنتجات الالبان
-    </h1>
-    <div className="flex  flex-col justify-start my-2 gap-5 items-end">
 
-    <h1 className="text-lg sm:text-xl lg:text-3xl  font-extrabold">
-      نقدم لك افضل منتجات الالبان الطازجة والمعقمة
-    </h1>
-    <button className="bg-[var(--foreground)]  w-[300px] text-white font-bold py-3 px-6 rounded-lg text-2xl " onClick={navigateToProducts}>
-      عرض المنتجات
-    </button>
-    </div>
-    
-      </div>
    
-      <img  src="/mainbg.png"  className="w-[98%] h-full"/>  
+    <button onClick={navigateToProducts} className="text-[var(--foreground)]  w-[150px]  md:w-[300px] bg-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
+      عرض المنتجات
+    </button>
+    <img src="/title.png" />
+    </div>
+
       </div>
+    
       <section className="w-full px-4 sm:px-10 md:px-16 lg:px-20 py-10">
       <Swiper
         spaceBetween={10}
@@ -111,7 +94,7 @@ function navigateToProducts() {
         <div className="swiper-pagination !absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center"></div>
       </Swiper>
     </section>
-      <section className="w-full border border-[#562b2c] border-t-0 bg-white flex flex-col items-center justify-evenly h-[81.8vh] pb-[10%] text-[var(--foreground)] responsive-height rounded-b-full">
+      {/* <section className="w-full border border-[#562b2c] border-t-0 bg-white flex flex-col items-center justify-evenly h-[81.8vh] pb-[10%] text-[var(--foreground)] responsive-height rounded-b-full">
        <div className="w-auto flex flex-col items-center justify-center">
         <h1 className="text-center  font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">{translations.overview}</h1>
 <img src="/title.png" className="md:w-full sm:w-3/4 w-1/2 " />
@@ -122,7 +105,7 @@ function navigateToProducts() {
         <button onClick={navigateToProducts} className="mt-6 text-white w-[200px] lg:w-[300px] bg-[var(--foreground)] font-bold py-3 px-6 rounded-lg text-2xl transition-all">
       عرض المنتجات
     </button>
-      </section>
+      </section> */}
       <section className="w-full">
 
       <div className="w-auto  flex flex-col items-center justify-center mb-6  mt-20">
