@@ -1,4 +1,3 @@
-import { useLanguage } from "@/pages/languageContext";
 import React from "react";
 
 interface ProductCardProps {
@@ -10,11 +9,9 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({
   title,
-  price,
   imageUrl,
   Id,
 }) => {
-  const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
 
   return (
     <div
