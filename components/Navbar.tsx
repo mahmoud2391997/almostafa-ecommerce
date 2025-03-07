@@ -57,7 +57,7 @@ function navigateToLanding() {
         </div>
       </div>
       <nav
-        className={`bg-white  relative flex justify-around items-center p-4 ${
+        className={`bg-gradient-to-b from-white to-[var(--foreground)]   relative flex justify-around items-center p-4 ${
           direction === "rtl" ? "flex-row-reverse" : "flex-row"
         }`}
       >
@@ -113,14 +113,14 @@ function navigateToLanding() {
           </div>
         </div>
         <div
-          className={` md:p-0 p-4  px-10 bg-white md:bg-transparent w-3/6 flex-col justify-start md:justify-evenly md:flex-row md:flex hidden ${
+          className={` md:p-0 p-4  px-10 md:bg-transparent w-3/6 flex-col justify-start md:justify-evenly md:flex-row md:flex hidden ${
             direction === "rtl"
               ? "flex-row-reverse text-right"
               : "flex-row text-left"
           }`}
         >
           <ul
-            className={`list-none  md:justify-between w-full md:items-center   text-[var(--foreground)]  font-bold text-base lg:text-lg xl:text-2xl  ${
+            className={`list-none  md:justify-between w-full md:items-center   text-white  font-bold text-base lg:text-lg xl:text-2xl  ${
               direction === "rtl" ? "flex flex-row-reverse" : "flex flex-row"
             }`}
           >

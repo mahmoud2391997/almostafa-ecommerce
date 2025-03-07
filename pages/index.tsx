@@ -30,21 +30,20 @@ function navigateToProducts() {
 }
   return (
     <div className={`w-full flex  flex-col`}>
-<div className="w-full h-[30vh] flex  bg-gradient-to-b from-white to-[var(--foreground)] z-0 rounded-b-full">
+<div className="w-full relative flex  bg-gradient-to-b from-white to-[var(--foreground)] z-0 rounded-b-full">
 
-         <div className="  rounded-b-lg bg-transparent m-auto  h-full p-5 text-center flex flex-col gap-2 items-center justify-around z-10 text-[var(--foreground)] ">
+         
           
-    <h1 className="text-lg sm:text-2xl md:text-6xl xl:text-7xl font-extrabold">
-      مرحبا بك في متجر المصطفي الاكتروني لمنتجات الالبان
-    </h1>
-
-
-   
-    <button onClick={navigateToProducts} className="text-[var(--foreground)]  w-[150px]  md:w-[300px] bg-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
-      عرض المنتجات
-    </button>
-    <img src="/title.png" />
-    </div>
+      <img src="/bg.jpeg" className="w-full" />  
+      <div className="absolute top-[5%] text-right w-[55%] right-[5%]">
+        <h1 style={{ lineHeight: "1.5em" }} className="text-white text-lg sm:text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-extrabold">
+          مرحباً بك في متجر المصطفى الإلكتروني
+        </h1>
+        <button onClick={navigateToProducts} className="text-[var(--foreground)] mt-4 md:mt-8 lg:mt-12 w-[75px] sm:w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-1 sm:py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl">
+          عرض المنتجات
+        </button>
+      </div>
+    
 
       </div>
     
