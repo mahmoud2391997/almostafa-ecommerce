@@ -39,7 +39,7 @@ function navigateToProducts() {
     <h1 className="text-lg sm:text-2xl md:text-4xl  font-extrabold">
       نقدم لك افضل منتجات الالبان الطازجة والمعقمة
     </h1>
-    <button className="bg-[var(--foreground)]  w-[150px]  md:w-[300px] text-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
+    <button onClick={navigateToProducts} className="bg-[var(--foreground)]  w-[150px]  md:w-[300px] text-white font-bold py-3 px-6 rounded-lg text-lg md:text-2xl ">
       عرض المنتجات
     </button>
     </div>
@@ -93,7 +93,7 @@ function navigateToProducts() {
         {adImages.map((src, index) => (
           <SwiperSlide
             key={index}
-            className="flex flex-col items-center h-full justify-between transition-all duration-500 mb-10"
+            className="flex flex-col items-center h-full justify-between transition-all duration-500 mb-10" onClick={navigateToProducts}
           >
             <img
               src={src}
@@ -101,7 +101,7 @@ function navigateToProducts() {
               className="w-full object-cover rounded-lg"
             />
             <div className="w-full flex justify-center mt-4">
-              <button onClick={navigateToProducts} className="w-[80%] max-w-[200px] h-[60px] text-white border border-[var(--foreground)] bg-[var(--foreground)] font-bold py-2 px-4 rounded-lg text-xl sm:text-2xl">
+              <button  className="w-[80%] max-w-[200px] h-[60px] text-white border border-[var(--foreground)] bg-[var(--foreground)] font-bold py-2 px-4 rounded-lg text-xl sm:text-2xl">
                 عرض المنتجات
               </button>
             </div>

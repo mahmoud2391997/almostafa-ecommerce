@@ -31,10 +31,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className=" h-1/4 text-[var(--foreground)] bg-transparent   rounded-xl flex flex-col justify-evenly items-center border-t border-[var(--foreground)]">
         <h3 className="text-center font-bold text-xl ">{title}</h3>
         <h3 className="text-center font-bold text-xl ">Code : {Id}</h3>
-        <p className="text-center font-bold text-xl">
-          {translations.price} :{" "}
-          {price + (direction === "rtl" ? " جم" : " L.E")}{" "}
-        </p>
+       
       </div>
     </div>
   );
