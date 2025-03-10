@@ -15,6 +15,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { CircularProgress } from "@mui/material";
 
 const adImages = [
   "/swiper2.jpg",
@@ -29,7 +30,7 @@ const adImages = [
 
 export default function Home() {
   const { translations } = useLanguage();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [, setActiveIndex] = useState(0);
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
 
@@ -99,21 +100,33 @@ export default function Home() {
         </Swiper>
       </section>
 
-      <section className="w-full">
-        <div className="w-auto flex flex-col items-center justify-center my-3 mb-2">
-          <h1 className="text-center text-white text-xl sm:text-2xl md:text-3xl flex items-center lg:text-4xl xl:text-6xl font-extrabold mb-2">
-          <div className="h-1 bg-white w-[65px] mr-3"></div>  {translations.categories}<div className="h-1 bg-white w-[65px] ml-3"></div>
-          </h1>
-        </div>
-        {categoriesLoading ? <p>Loading Categories...</p> : <Categories categories={categories}/>}
-      </section>
-      <section className="w-full">
-      
+      return (
+  <div className="w-full bg-[var(--foreground)] flex flex-col">
+    {/* Loader for categories */}
+    {categoriesLoading || productsLoaing ? (
+      <div className="flex justify-center items-center h-screen">
+        <CircularProgress size={80} thickness={5} color="primary" />
+      </div>
+    ) : (
+      <>
+        {/* Main content when data is loaded */}
+        <section className="w-full">
+          <div className="w-auto flex flex-col items-center justify-center my-3 mb-2">
+            <h1 className="text-center text-white text-xl sm:text-2xl md:text-3xl flex items-center lg:text-4xl xl:text-6xl font-extrabold mb-2">
+              <div className="h-1 bg-white w-[65px] mr-3"></div>
+              {translations.categories}
+              <div className="h-1 bg-white w-[65px] ml-3"></div>
+            </h1>
+          </div>
+          <Categories categories={categories} />
+        </section>
 
-      {/* Pass filtered products to Category component */}
-      <Category categories={categories} products={products} />
-   
-
-</section>    </div>
+        <section className="w-full">
+          <Category categories={categories} products={products} />
+        </section>
+      </>
+    )}
+  </div>
+);   </div>
   );
 }

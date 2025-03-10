@@ -25,9 +25,7 @@ function productslist() {
             {dairyProducts.map((product: ProductCardProps) => (
               <ProductCard
                 key={product.id}
-                Id={product.id}
                 title={product.name}
-                price={product.price}
                 imageUrl={product.image}
               />
             ))}
