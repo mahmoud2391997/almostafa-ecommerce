@@ -88,7 +88,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories, products }) => {
           <div className="flex justify-center w-full mt-5">
             <button
             onClick={() => router.push(`/productsList/?category=${category._id}`)}
-            className="text-[var(--foreground)] m-auto w-[75px] sm:w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-1 sm:py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
+            className="text-[var(--foreground)] m-auto w-[200px] lg:w-[300px] bg-white font-bold py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
           >
             عرض جميع المنتجات
           </button>

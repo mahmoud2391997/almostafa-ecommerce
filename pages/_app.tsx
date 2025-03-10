@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <LanguageProvider>
-        <div className="w-full min-h-screen pb-[189px] bg-[var(--foreground)] relative flex flex-col">
+        <div className="w-full min-h-screen pb-[282px] md:pb-[189px] bg-[var(--foreground)] relative flex flex-col">
           <Navbar />
           <Component {...pageProps} />
           <Footer />

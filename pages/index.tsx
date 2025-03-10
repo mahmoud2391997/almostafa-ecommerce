@@ -90,7 +90,7 @@ export default function Home() {
               <div className="w-full flex justify-center mt-4">
               <button
             onClick={navigateToProducts}
-            className="text-[var(--foreground)]  w-[75px] sm:w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-1 sm:py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
+            className="text-[var(--foreground)]  w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
           >
             عرض المنتجات
           </button>
