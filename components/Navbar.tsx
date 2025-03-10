@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faMobile } from "@fortawesome/free-solid-svg-icons";
+
 import LanguageDropdown from "./language";
 import { useLanguage } from "../pages/languageContext";
 import { useRouter } from "next/router";
@@ -15,7 +14,7 @@ function navigateToLanding() {
 }
   return (
     <div className=" w-full z-50">
-      <div className="w-full h-auto sm:h-[45px] flex justify-center items-center bg-white text-[var(--foreground)] relative">
+      {/* <div className="w-full h-auto sm:h-[45px] flex justify-center items-center bg-white text-[var(--foreground)] relative">
         <div className="sm:w-full flex justify-center items-center m-0">
           <div
             className={`flex justify-around items-center w-full flex-col sm:flex-row h-auto ${
@@ -55,7 +54,7 @@ function navigateToLanding() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <nav
         className={`bg-gradient-to-b from-white to-[var(--foreground)]   relative flex justify-around items-center p-4 ${
           direction === "rtl" ? "flex-row-reverse" : "flex-row"
