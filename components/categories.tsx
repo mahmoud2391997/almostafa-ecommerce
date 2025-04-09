@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Categoryy from "./category";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules"; // Import Navigation module
+import { Swiper as SwiperType } from "swiper"; // Import Swiper type
 import "swiper/css";
 import "swiper/css/navigation";
 import clsx from "clsx";
@@ -28,7 +29,7 @@ interface CategoriesProps {
 
 const Categories: React.FC<CategoriesProps> = ({ categories, products }) => {
   const [activeTab, setActiveTab] = useState(categories[0]?._id || "");
-  const swiperRef = useRef<any>(null); // Reference to Swiper instance
+  const swiperRef = useRef<SwiperType | null>(null); // Correct Swiper instance type
 
   const filteredProducts = (categoryId: string) =>
     products.filter((product) => product.categoryId === categoryId);
