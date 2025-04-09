@@ -5,7 +5,7 @@ import { faEnvelope, faMobile } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   const { translations, direction } = useLanguage(); // Ensure direction is provided by useLanguage
   return (<div className="absolute bottom-0 w-full">
-    <footer className=" text-[var(--foreground)] pt-6  bg-gradient-to-b to-white from-[var(--foreground)] ">
+    <footer className=" text-[var(--foreground)] pt-6  bg-gradient-to-b from-white to-[var(--foreground)] ">
     <div className="container mx-auto text-center flex flex-col  justify-between">
       
       <div className={`flex flex-col justify-center items-center mb-4 ${direction  == "rtl" ? "sm:flex-row-reverse " : "sm:flex-row "}`}>
@@ -15,13 +15,13 @@ const Footer = () => {
         </div>
       </div>
       <div>
-      <p className="text-[var(--foreground)]">&copy; 2025 Almostafa e-commerce For Dairy Products. All rights reserved.</p>
+      <p className="text-white">&copy; 2025 Almostafa e-commerce For Dairy Products. All rights reserved.</p>
       
       </div>
     </div>
     
   </footer>
-  <div className="w-full h-auto sm:h-[45px] flex justify-center items-center bg-white text-[var(--foreground)] relative">
+  <div className="w-full h-auto sm:h-[45px] flex justify-center items-center bg-[var(--foreground)] text-white relative">
         <div className="sm:w-full flex justify-center items-center m-0">
           <div
             className={`flex justify-around items-center w-full flex-col sm:flex-row h-auto ${

@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { CircularProgress } from "@mui/material"; // Import CircularProgress
 import { useLanguage } from "../languageContext";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store/store"; // Adjust the path to your store file
+import { useDispatch, useSelector } from "react-redux";
+import { RootState, AppDispatch } from "../../redux/store/store"; // Adjust the path to your store file
+import { fetchProducts } from "@/redux/store/slices/productsSlice";
+import { fetchCategories } from "@/redux/store/slices/categoriesSlice";
 
 export default function DairyDerivatives() {
   const router = useRouter();
@@ -16,12 +18,24 @@ export default function DairyDerivatives() {
   const [filteredCategory, setFilteredCategory] = useState<string[]>([]);
   const { products, loading: productsLoading } = useSelector((state: RootState) => state.products);
   const { categories, loading: categoriesLoading } = useSelector((state: RootState) => state.categories);
-
+  const dispatch = useDispatch();
   const handleCheckboxChange = (type: string) => {
     setFilteredCategory((prev) =>
       prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type]
     );
   };
+
+  useEffect(() => {
+    const fetchingProducts = async (): Promise<void> => {
+      (dispatch as AppDispatch)(fetchProducts());
+    };
+    fetchingProducts();
+
+    const fetchingCategories = async (): Promise<void> => {
+      (dispatch as AppDispatch)(fetchCategories());
+    };
+    fetchingCategories();
+  }, []);
 
   useEffect(() => {
     if (query?.category && categories.some((cat) => cat._id === query.category)) {
@@ -49,10 +63,10 @@ export default function DairyDerivatives() {
   return (
     <div className="px-[1%] responsive-height xl:px-[2.5%]">
       <div className="w-auto h-[15vh] flex flex-col items-center justify-center my-3 md:my-6 mt-0">
-        <h1 className="text-center text-white flex items-center font-extrabold text-4xl md:text-6xl mb-2">
-          <div className="h-1 bg-white w-[65px] mr-3"></div>  
+        <h1 className="text-center text-[var(--foreground)] flex items-center font-extrabold text-4xl md:text-6xl mb-2">
+          <div className="h-1 bg-[var(--foreground)] w-[65px] mr-3"></div>  
           {translations.productsList}
-          <div className="h-1 bg-white w-[65px] ml-3"></div>
+          <div className="h-1 bg-[var(--foreground)] w-[65px] ml-3"></div>
         </h1>
       </div>
       <main className="w-full relative h-auto flex gap-7 flex-col-reverse md:flex-row">
@@ -64,7 +78,7 @@ export default function DairyDerivatives() {
         </div>
 
         {/* Sidebar */}
-        <div className="xl:w-1/6 lg:w-1/4 md:w-1/3 w-full right-0 flex flex-col justify-start h-auto lg:items-end items-center">
+        <div className="xl:w-auto lg:w-1/4 md:w-1/3 w-full right-0 flex flex-col justify-start h-auto lg:items-end items-center">
           <div className="flex items-center border-2 border-[var(--foreground)] w-full space-x-4 p-4 bg-white rounded-lg mb-4">
             <input
               value={searchItem}

@@ -6,12 +6,9 @@ import { fetchProducts } from "../redux/store/slices/productsSlice";
 import { RootState, AppDispatch } from "../redux/store/store";
 
 import Categories from "@/components/categories";
-import Category from "@/components/category";
-import { useLanguage } from "./languageContext";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-
+import { Autoplay, Pagination,  } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -29,7 +26,6 @@ const adImages = [
 ];
 
 export default function Home() {
-  const { translations } = useLanguage();
   const [, setActiveIndex] = useState(0);
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
@@ -47,7 +43,7 @@ export default function Home() {
   }
 
   return (
-    <div className="w-full bg-[var(--foreground)] flex flex-col">
+    <div className="w-full bg-white flex flex-col">
       <div className="w-full relative flex bg-gradient-to-b from-white to-[var(--foreground)] z-0 rounded-b-full">
         <img src="/bg.jpeg" className="w-full" />
         <div className="absolute top-[5%] text-right w-[55%] right-[5%]">
@@ -78,8 +74,7 @@ export default function Home() {
               return `<span class="${className} w-6 h-1 bg-gray-500 rounded-md mx-1 inline-block"></span>`;
             },
           }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination]}
           className="w-full relative rounded-lg"
           loop={true}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -90,7 +85,7 @@ export default function Home() {
               <div className="w-full flex justify-center mt-4">
               <button
             onClick={navigateToProducts}
-            className="text-[var(--foreground)]  w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
+            className="bg-[var(--foreground)]  w-[150px] md:w-[200px] lg:w-[300px] text-white font-bold py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
           >
             عرض المنتجات
           </button>
@@ -100,8 +95,7 @@ export default function Home() {
         </Swiper>
       </section>
 
-      return (
-  <div className="w-full bg-[var(--foreground)] flex flex-col">
+  <div className="w-full bg-white flex flex-col">
     {/* Loader for categories */}
     {categoriesLoading || productsLoaing ? (
       <div className="flex justify-center items-center h-screen">
@@ -110,23 +104,14 @@ export default function Home() {
     ) : (
       <>
         {/* Main content when data is loaded */}
-        <section className="w-full">
-          <div className="w-auto flex flex-col items-center justify-center my-3 mb-2">
-            <h1 className="text-center text-white text-xl sm:text-2xl md:text-3xl flex items-center lg:text-4xl xl:text-6xl font-extrabold mb-2">
-              <div className="h-1 bg-white w-[65px] mr-3"></div>
-              {translations.categories}
-              <div className="h-1 bg-white w-[65px] ml-3"></div>
-            </h1>
-          </div>
-          <Categories categories={categories} />
-        </section>
+      
 
         <section className="w-full">
-          <Category categories={categories} products={products} />
+          <Categories categories={categories} products={products} />
         </section>
       </>
     )}
   </div>
-);   </div>
+  </div>
   );
 }

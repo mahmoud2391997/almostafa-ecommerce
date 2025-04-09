@@ -7,7 +7,13 @@
   --foreground: #214e94;
 }
 
-
+.swiper-wrapper {
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+  
 .gradient-text {
   background: linear-gradient(to right, blue, green, red, yellow);
   -webkit-background-clip: text;
