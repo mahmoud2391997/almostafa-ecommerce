@@ -49,7 +49,8 @@ const Categories: React.FC<CategoriesProps> = ({ categories, products }) => {
         
         <Swiper
           spaceBetween={10}
-          slidesPerView={2}
+          slidesPerView={2.5}
+          loop={true}
           breakpoints={{
             480: { slidesPerView: 3 },
             640: { slidesPerView: 4 },
@@ -65,6 +66,7 @@ const Categories: React.FC<CategoriesProps> = ({ categories, products }) => {
             },
           }}
           className="w-full relative rounded-lg"
+          
           dir={"rtl"}
         >
           {categories.map((category) => (
