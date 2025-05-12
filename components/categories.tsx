@@ -1,136 +1,58 @@
-import React, { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Categoryy from "./category";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules"; // Import Navigation module
-import { Swiper as SwiperType } from "swiper"; // Import Swiper type
-import "swiper/css";
-import "swiper/css/navigation";
-import clsx from "clsx";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import arrow icons
+import { useRouter } from "next/router";
+ import React from "react";
+ 
+ import { useLanguage } from "@/pages/languageContext";
+ interface Category {
+   _id: string;
+   name: string;
+   image: string;
+ }
+ 
+ interface CategoriesProps {
+   categories: Category[];
+ }
+ 
+ const Categories: React.FC<CategoriesProps> = ({ categories }) => {
+   const { translations } = useLanguage(); // Ensure direction is provided by useLanguage
+   const router = useRouter();
+ function navigateToProducts(category : string) { 
+   router.push(`/productsList/?category=${category}`);
+ }
+   return (
+     <div className="categories p-6 w-full">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+         {categories.map((category) => (
+           <div
+             key={category.name}
+            
+             className="w-full   p-4 min-h-[40vh] cursor-pointer "
+             onClick={() => navigateToProducts(category._id)}
+           >
+             <div className="bg-white h-full flex flex-col justify-between border-blue rounded-2xl border border-[white] overflow-y-hidden">
+               <div className="flex justify-center items-center h-4/5 w-full border rounded-2xl border-[var(--foreground)]">
+                 <img
+                   src={category.image}
+                   alt={category.name}
+                   className="  object-cover rounded-2xl "
+                 />
+               </div>
+ 
+               <div className="w-full flex flex-col bg-transparent  h-1/5 rounded-xl  justify-evenly items-center min-h-[78px]">
+                 <h3 className="text-center  text-[var(--foreground)]  h-10 my-auto pt-1   font-bold text-2xl">
+                   {category.name}
+                 </h3>
+                   <button
+                     className=" text-white mb-1 bg-[var(--foreground)] py-1 px-4 rounded"
+                   >
+                     {translations.viewProducts}
+                   </button>
+               </div>
+             </div>
+           </div>
+         ))}
+     </div>
+     </div>
 
-interface Category {
-  _id: string;
-  name: string;
-  image: string;
-}
-
-interface Product {
-  _id: string;
-  name: string;
-  image: string;
-  categoryId: string;
-}
-
-interface CategoriesProps {
-  categories: Category[];
-  products: Product[];
-}
-
-const Categories: React.FC<CategoriesProps> = ({ categories, products }) => {
-  const [activeTab, setActiveTab] = useState(categories[0]?._id || "");
-  const swiperRef = useRef<SwiperType | null>(null); // Correct Swiper instance type
-
-  const filteredProducts = (categoryId: string) =>
-    products.filter((product) => product.categoryId === categoryId);
-
-  return (
-    <div className="min-h-screen">
-      {/* Tab Navigation */}
-      <div className="relative !overflow-visible flex w-full justify-center flex-row gap-x-4 md:space-x-6 mb-6 overflow-x-auto">
-        {/* Navigation Buttons */}
-        <button 
-          onClick={() => swiperRef.current?.slideNext()}
-          className="flex md:hidden items-center justify-center text-[var(--foreground)] hover:text-black transition-colors"
-          aria-label="Previous categories"
-        >
-          <FaChevronLeft size={24} />
-        </button>
-        
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={2.5}
-          loop={true}
-          breakpoints={{
-            480: { slidesPerView: 3 },
-            640: { slidesPerView: 4 },
-            1024: { slidesPerView: 5 },
-          }}
-          modules={[Navigation]} // Add Navigation module
-          onSwiper={(swiper) => (swiperRef.current = swiper)} // Store Swiper instance
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          pagination={{
-            clickable: true,
-            renderBullet: (index, className) => {
-              return `<span class="${className} w-6 h-1 bg-gray-500 rounded-md mx-1 inline-block"></span>`;
-            },
-          }}
-          className="w-full relative rounded-lg"
-          
-          dir={"rtl"}
-        >
-          {categories.map((category) => (
-            <SwiperSlide 
-              key={category._id} 
-              className="!w-auto flex justify-center items-center"
-            >
-              <div className="relative flex justify-center items-center px-5">
-                <button
-                  className={clsx(
-                    "relative py-2 px-3 md:px-4 lg:px-4 text-base sm:text-lg md:text-xl lg:text-xl font-medium transition-colors duration-200 whitespace-nowrap",
-                    activeTab === category._id 
-                      ? "text-black font-semibold underline underline-offset-8 decoration-[var(--foreground)] decoration-2" 
-                      : "text-[var(--foreground)] hover:text-black"
-                  )}
-                  onClick={() => setActiveTab(category._id)}
-                  aria-selected={activeTab === category._id}
-                >
-                  {category.name}
-
-                  {activeTab === category._id && (
-                    <motion.div
-                      layoutId={`active-tab-${category._id}`}
-                      className="absolute left-0 -bottom-1 h-0.5 w-full bg-black"
-                      initial={{ scaleX: 0, originX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    />
-                  )}
-                </button>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
-        <button 
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="flex md:hidden items-center justify-center text-[var(--foreground)] hover:text-black transition-colors"
-          aria-label="Next categories"
-        >
-          <FaChevronRight size={24} />
-        </button>
-      </div>
-
-      {/* Tab Content with animation */}
-      <div className="p-4">
-        <AnimatePresence mode="wait">
-          {categories.map((category) =>
-            activeTab === category._id ? (
-              <motion.div
-                key={category._id}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Categoryy products={filteredProducts(category._id)} />
-              </motion.div>
-            ) : null
-          )}
-        </AnimatePresence>
-      </div>
-    </div>
-  );
-};
-
-export default Categories;
+   );
+ };
+ export default Categories;
