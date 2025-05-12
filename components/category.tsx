@@ -40,9 +40,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
  
          return (
            <div key={category._id} className="mb-10 ">
-             <h3 className="text-4xl font-semibold justify-center  flex items-center text-white text-center mb-5 mt-2">
+             <h3 className="text-4xl font-semibold justify-center  flex items-center text-[var(--foreground)] text-center mb-5 mt-2">
                
-           <div className="h-1 bg-white w-[50px] mr-3"></div>  {category.name}<div className="h-1 bg-white w-[50px] ml-3"></div>
+           <div className="h-1 bg-[var(--foreground)] w-[50px] mr-3"></div>  {category.name}<div className="h-1 bg-[var(--foreground)] w-[50px] ml-3"></div>
              </h3>
              {/* Swiper Container */}
              <div className="relative mx-4">
@@ -85,10 +85,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
                  <FaArrowRight className="text-black text-xl" />
                </button>
              </div>
-           <div className="flex justify-center w-full mt-5">
+           <div className="flex justify-center w-full  mt-5">
              <button
              onClick={() => router.push(`/productsList/?category=${category._id}`)}
-             className="text-[var(--foreground)] m-auto w-[75px] sm:w-[150px] md:w-[200px] lg:w-[300px] bg-white font-bold py-1 sm:py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
+             className="bg-[var(--foreground)] text-white m-auto w-[75px] sm:w-[150px] md:w-[200px] lg:w-[300px]  font-bold py-1 sm:py-2 md:py-3 lg:py-4 px-3 sm:px-4 md:px-6 lg:px-8 rounded-lg text-sm sm:text-base md:text-lg lg:text-2xl"
            >
              عرض جميع المنتجات
            </button>
