@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../redux/store/slices/categoriesSlice";
@@ -6,33 +6,21 @@ import { fetchProducts } from "../redux/store/slices/productsSlice";
 import { RootState, AppDispatch } from "../redux/store/store";
 import Categories from "@/components/categories";
 import Category from "../components/category"
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination,  } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { CircularProgress } from "@mui/material";
 import { useLanguage } from "./languageContext";
 
-const adImages = [
-  "/swiper2.jpg",
-  "/swiper3.jpg",
-  "/swiper4.jpg",
-  "/swiper5.jpg",
-  "/swiper6.jpg",
-  "/swiper7.jpg",
-  "/swiper8.jpg",
-  "/swiper9.jpg",
-];
+
 
 export default function Home() {
-  const [, setActiveIndex] = useState(0);
   const router = useRouter();
   const dispatch = useDispatch<AppDispatch>();
-  const { translations, direction } = useLanguage();
+  const { translations } = useLanguage();
 
   const { categories, loading: categoriesLoading } = useSelector((state: RootState) => state.categories);
-  const { products, loading: productsLoaing } = useSelector((state: RootState) => state.products);
+  const { products } = useSelector((state: RootState) => state.products);
 
   useEffect(() => {
     dispatch(fetchCategories());
